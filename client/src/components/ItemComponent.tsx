@@ -14,7 +14,7 @@ function ItemComponent(props: ItemProps) {
     const addTaker = function () {
         props.onTakeItem({
             do: {
-                id: props.item.id,
+                key: props.item.key,
                 taker: taker
             }
         })
