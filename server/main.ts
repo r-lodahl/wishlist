@@ -57,7 +57,7 @@ wss.on("connection", ws => {
 
         if (newObject) {
             item = {
-                key: db.data.items.length === 0 ? 0 : db.data.items[db.data.items.length - 1].key++,
+                key: db.data.items.length === 0 ? 0 : db.data.items[db.data.items.length - 1].key + 1,
                 name: `${newObject.name[0].toUpperCase()}${newObject.name.slice(1)}`
             }
             db.data.items.push(item)
