@@ -30,7 +30,13 @@ function App() {
           if (Array.isArray(message)) {
               setItems(message as Item[])
           } else {
-              setItems(items.concat(message as Item))
+              const item = message as Item
+              const index = items.findIndex((i,_index,_obj) => i.key === item.key)
+              if (index > -1) {
+                  items[index] = item
+              } else {
+                  setItems(items.concat(item))
+              }
           }
 
       }
