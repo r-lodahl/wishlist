@@ -49,7 +49,7 @@ wss.on("connection", ws => {
         const newObject = json.new as NewItem
         const doObject = json.do as TakeItem
 
-        if (!newObject && !doObject) {
+        if ((!newObject || newObject.name.length === 0) && !doObject) {
             return
         }
 
