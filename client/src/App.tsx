@@ -34,6 +34,7 @@ function App() {
               const index = items.findIndex((i,_index,_obj) => i.key === item.key)
               if (index > -1) {
                   items[index] = item
+                  setItems(items)
               } else {
                   setItems(items.concat(item))
               }
